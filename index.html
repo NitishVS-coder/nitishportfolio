@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .profile-about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 50%;
+        }
+
+        .profile-pic,
+        .education-pic,
+        .skills-pic,
+        .experience-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 140px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .profile-name {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .about-section {
+            width: 43%;
+            text-align: justify;
+        }
+
+        .education-section,
+        .skills-section,
+        .experience-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .education-container,
+        .skills-container,
+        .experience-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .education-details,
+        .skills-details,
+        .experience-details {
+            width: 50%;
+            text-align: left;
+            position: relative;
+        }
+
+        .education-image,
+        .skills-image,
+        .experience-image {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .education-title,
+        .skills-title,
+        .experience-title {
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .skills-list ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .experience-container {
+            flex-direction: row;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            width: 2px;
+            height: 100%;
+            background: white;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 0px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .project-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .project-details {
+            width: 44%;
+            text-align: left;
+            position: relative;
+        }
+
+        .project-image {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-title {
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .project-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .timeline2 {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline2::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            width: 2px;
+            height: 100%;
+            background: white;
+        }
+
+        .timeline-item2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 0px;
+        }
+
+        .timeline-item2::before {
+            content: "";
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* rtrt */
+        .container2 {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .container-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 69%;
+        }
+
+        .details {
+            width: 50%;
+            text-align: left;
+            position: relative;
+        }
+
+        .image-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+        }
+
+        .pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .contact-title {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-list li i {
+            margin-right: 20px;
+            font-size: 22px;
+            color: lightblue;
+        }
+
+        /* animation */
+        .container {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+
+        .profile-about {
+            transform: translateX(-50px);
+        }
+
+        .education-section {
+            transform: translateX(50px);
+        }
+
+        .skills-section {
+            transform: translateX(-50px);
+        }
+
+        .experience-section {
+            transform: translateX(50px);
+        }
+
+        .project-section {
+            transform: translateX(-50px);
+        }
+
+        .contact-section {
+            transform: translateX(50px);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+/* mobile response */
+
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Mobile screens pe width kam kar diya */
+        padding: 15px;
+    }
+    @media screen and (max-width: 768px) {
+    .profile-pic {
+        height: 120px !important; /* Yeh force apply karega */
+    }
+}
+
+
+    .profile-about, 
+    .education-container, 
+    .skills-container, 
+    .experience-container, 
+    .project-container, 
+    .container-flex {
+        flex-direction: column; /* Mobile pe ek ke neeche ek aaye */
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-section, 
+    .about-section, 
+    .education-details, 
+    .skills-details, 
+    .experience-details, 
+    .project-details, 
+    .details {
+        width: 100%; /* Full width le lenge */
+    }
+
+    .profile-pic, 
+    .education-pic, 
+    .skills-pic, 
+    .experience-pic, 
+    .project-pic, 
+    .pic {
+        width: 100px; /* Mobile me icons thode chhote ho jaye */
+        height: 100px;
+    }
+
+    .timeline::before {
+        left: 10px; /* Timeline thodi adjust ho jaye */
+    }
+
+    .timeline-item::before {
+        left: -25px; /* Timeline dots ko bhi adjust kiya */
+    }
+}
+
+/* ttt */
+@media screen and (max-width: 768px) {
+    .profile-about, 
+    .education-container, 
+    .skills-container, 
+    .experience-container, 
+    .project-container {
+        flex-direction: column; /* Mobile pe ek ke neeche ek aaye */
+        align-items: center;
+        text-align: center;
+    }
+
+    .education-image, 
+    .skills-image, 
+    .experience-image, 
+    .project-image, 
+    .image-container {
+        order: -1; /* Images ko upar le aayenge */
+    }
+
+    .profile-section, 
+    .about-section, 
+    .education-details, 
+    .skills-details, 
+    .experience-details, 
+    .project-details, 
+    .details {
+        width: 100%; /* Full width le lenge */
+    }
+
+    .profile-pic, 
+    .education-pic, 
+    .skills-pic, 
+    .experience-pic, 
+    .project-pic, 
+    .pic {
+        width: 100px; /* Mobile me icons thode chhote ho jaye */
+        height: 100px;
+    }
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Portfolio</h1>
+        </div>
+
+        <div class="container profile-about">
+            <div class="profile-section">
+                <img src="Nitish.jpeg" class="profile-pic">
+                <div class="profile-name">Nitish Kumar</div>
+            </div>
+            <div class="about-section">
+                <h2>About Me</h2>
+                <p>I am a skilled professional with a passion for technology and quality work. Proficient in MS Office
+                    and advanced Excel, I manage digital data efficiently. I have experience in graphic and web design,
+                    with good knowledge of accounts, allowing me to handle various tasks effectively. I value simplicity
+                    and quality, known for my professionalism and good work ethics.</p>
+            </div>
+        </div>
+
+        <div class="container education-section">
+            <div class="education-container">
+                <div class="education-details">
+                    <div class="timeline">
+                        <div class="timeline-item"><strong>10th Pass</strong> from CBSE</div>
+                        <div class="timeline-item"><strong>12th Pass</strong> from NIOS - (Arts Background)</div>
+                        <div class="timeline-item"><strong>Graduation</strong> : BCA (Bachelor of Computer Applications)</div>
+                        <div class="timeline-item"><strong>Certifications</strong> : Advance Diploma in Information
+                            Technology (SCP Infotech Institute)</div>
+                    </div>
+                </div>
+                <div class="education-image">
+                    <img src="Education-icon.png" class="education-pic">
+                    <div class="education-title">Education</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container skills-section">
+            <div class="skills-container">
+                <div class="skills-image">
+                    <img src="skills-icon.png" class="skills-pic">
+                    <div class="skills-title">Skills</div>
+                </div>
+                <div class="skills-details">
+                    <div class="skills-list">
+                        <ul>
+                            <li>MS-Office</li>
+                            <li>Basic & Advanced Excel</li>
+                            <li>Basic Accounting</li>
+                            <li>Tally</li>
+                            <li>Data Entry</li>
+                        </ul>
+                        <ul>
+                            <li>Photoshop</li>
+                            <li>PageMaker</li>
+                            <li>CorelDraw</li>
+                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container experience-section">
+            <div class="experience-container">
+                <div class="experience-details">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>2 Year Experience</strong> in electrician helper & inverter & battery service from
+                            "Emm Key Sale & Service" <span style="color: lightblue;">2020 - 2022</span>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>2 Year Experience</strong> as a computer teacher , calling , data management from
+                            "SCP Infotech Institute" <span style="color: lightblue;">2023 - 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-image">
+                    <img src="Experience-icon.png" class="experience-pic">
+                    <div class="experience-title">Experience</div>
+                </div>
+            </div>
+        </div>
+        <div class="container project-section">
+            <div class="project-container">
+                <div class="project-image">
+                    <img src="Project-Icon.png" class="project-pic">
+                    <div class="project-title">Project</div>
+                </div>
+                <div class="project-details">
+                    <div class="timeline2">
+                        <div class="timeline-item2"><strong>Coming soon...</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container contact-section">
+        <div class="section">
+            <div class="container-flex">
+                <div class="details">
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> &nbsp nitish6181@email.com</li>
+                        <li><i class="fas fa-phone"></i> &nbsp +91 9971945966</li>
+                        <li><i class="fab fa-linkedin"></i> &nbsp linkedin.com/in/example</li>
+                        <li><i class="fas fa-map-marker-alt"></i> &nbsp Sarita Vihar, M.P.K Ext., New Delhi - 110076
+                        </li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="Contect-icon.png" class="pic">
+                    <div class="contact-title">Contact</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <!-- script -->
+
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll(".container");
+    
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add("show");
+                        }, index * 1200); // Har section ke liye delay increase hoga
+                        observer.unobserve(entry.target); // Ek baar animate hone ke baad dubara observe mat karo
+                    }
+                });
+            }, { threshold: 0.2 });
+    
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    
+
+   
+
+
+</body>
+
+</html>
